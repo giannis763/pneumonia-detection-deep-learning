@@ -1,35 +1,29 @@
 # Pneumonia Detection via Chest X-Rays using Deep Learning & Grad-CAM
 
-Αυτό το project αναπτύχθηκε στα πλαίσια της πτυχιακής μου εργασίας στην Πληροφορική. Στόχος του ήταν να δημιουργηθεί ένα πρακτικό εργαλείο τεχνητής νοημοσύνης που βοηθά στον εντοπισμό πνευμονίας από ακτινογραφίες θώρακα, δίνοντας παράλληλα πλήρη οπτική εξήγηση για κάθε διάγνωση.
+This project was developed as part of my undergraduate thesis in Computer Science. The goal was to build a practical AI tool to assist in detecting pneumonia from chest X-ray images, while providing visual explanations for each diagnosis.
 
----
+### Why I built it
+In medical deep learning applications, it is not enough for a model to simply output whether an X-ray shows signs of disease. Clinicians need to understand why a specific decision was reached. To address this, I integrated Grad-CAM, which produces heatmaps overlaid on the input image to highlight the suspicious regions that drove the prediction.
 
-### 💡 Γιατί το έφτιαξα
-Στα ιατρικά συστήματα βαθιάς μάθησης δεν αρκεί ένα μοντέλο να λέει απλώς αν μια ακτινογραφία δείχνει ασθένεια. Ένας γιατρός πρέπει να καταλαβαίνει *γιατί* πάρθηκε αυτή η απόφαση. Γι' αυτό ενσωμάτωσα την τεχνική **Grad-CAM**, η οποία δημιουργεί θερμικούς χάρτες (heatmaps) πάνω στην εικόνα, δείχνοντας ακριβώς τις ύποπτες περιοχές που οδήγησαν στην πρόβλεψη.
+### Key features
+* Deep Learning Model: Trained neural networks using TensorFlow / Keras on an open-source chest X-ray dataset.
+* Explainability (Grad-CAM): Visualized the image features and regions influencing the model's output.
+* Web Application: An interactive Python web interface for uploading images and viewing predictions alongside heatmaps.
+* Documentation: Includes the literature review, implementation methodology, and the complete thesis text.
 
----
+### Repository structure
+* App/ — Web application code (app.py), the trained model weights (best_final.keras), and requirements.
+* Code/ — Jupyter Notebook (Thesis.ipynb) covering data preprocessing, model training, evaluation, and Grad-CAM generation.
+* Dissertation/ — Complete thesis documentation and reports.
 
-### ⚙️ Τι περιλαμβάνει το σύστημα
-* **Deep Learning Μοντέλο:** Εκπαίδευση νευρωνικών δικτύων (TensorFlow / Keras) σε ανοιχτό dataset ακτινογραφιών.
-* **Explainability (Grad-CAM):** Οπτικοποίηση των χαρακτηριστικών της εικόνας που επηρέασαν το αποτέλεσμα.
-* **Web Εφαρμογή:** Διαδραστικό interface σε Python για εύκολο upload εικόνας και άμεση προβολή της πρόβλεψης και του heatmap.
-* **Τεκμηρίωση: Ολόκληρη η βιβλιογραφική έρευνα, τα στάδια υλοποίησης και το κείμενο της πτυχιακής.
+### Getting started
 
----
-
-### 📁 Δομή του φακέλου
-* `App/` — Ο κώδικας του web app (`app.py`), το εκπαιδευμένο μοντέλο (`best_final.keras`) και τα απαραίτητα πακέτα.
-* `Code/` — Το Jupyter Notebook (`Thesis.ipynb`) με τη διαδικασία εκπαίδευσης και αξιολόγησης του μοντέλου.
-* `Dissertation/` — Το πλήρες κείμενο της πτυχιακής εργασίας.
-
----
-
-### 🚀 Πώς τρέχει το Web App
-1. Κατεβάζεις το αποθετήριο:
-   pip install -r requirements.txt
-Ξεκινάς την εφαρμογή:
-Bash
-python app.py
-   ```bash
-   git clone [https://github.com/giannis763/pneumonia-detection-deep-learning.git](https://github.com/giannis763/pneumonia-detection-deep-learning.git)
+1. Clone the repository and navigate to the app directory:
+   git clone https://github.com/giannis763/pneumonia-detection-deep-learning.git
    cd pneumonia-detection-deep-learning/App
+
+2. Install the required dependencies:
+   pip install -r requirements.txt
+
+3. Run the application:
+   python app.py
